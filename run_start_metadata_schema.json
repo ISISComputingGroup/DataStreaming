@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ISISComputingGroup/DataStreaming/blob/main/run_start_metadata_schema.json",
+  "title": "run_start_metadata_schema",
+  "description": "Schema for run start metadata used at ISIS for kafka_dae_diagnostics",
+  "type": "object",
+  "properties": {
+    "num_periods": {
+      "description": "The maximum number of periods for this run",
+      "type": "integer"
+    },
+    "num_time_channels": {
+      "description": "The maximum number of time channels for this run",
+      "type":"integer"
+    },
+    "time_regimes": {
+      "description": "The time regimes for this run",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "description": "time regime rows",
+        "items": {
+          "type":"object",
+          "description": "time regime row",
+          "properties": {
+            "from": {
+              "type": "number"
+            },
+            "to": {
+              "type": "number"
+            },
+            "steps": {
+              "type": "number"
+            },
+            "mode": {
+              "enum": ["dT = C", "dT/T = C", "dT/T**2 = C", "Shifted"]
+            }
+          }
+        }
+      }
+    },
+    "vetos": {
+      "description": "The vetos for this run",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  },
+  "required": ["num_periods", "num_time_channels", "time_regimes", "vetos"]
+}
+
