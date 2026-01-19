@@ -6,11 +6,11 @@
   "type": "object",
   "properties": {
     "num_periods": {
-      "description": "The maximum number of periods for this run",
+      "description": "The total number of periods for this run",
       "type": "integer"
     },
     "num_time_channels": {
-      "description": "The maximum number of time channels for this run",
+      "description": "The total number of time channels for this run",
       "type":"integer"
     },
     "time_regimes": {
