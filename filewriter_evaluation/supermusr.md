@@ -100,11 +100,12 @@ A major initial decision would be whether to stick with the existing hard-coding
 #### [Intermediate and autosave files](https://github.com/isisComputingGroup/datastreaming/issues/96)
 
 - **Unsupported**
-  * There does not appear to be any support for these concepts.
+  * There is no support for intermediate/autosave files; the SuperMuSR team instead prefer to do this on demand from the Kafka data.
   * The file is flushed to disk incrementally.
   * SWMR support is not being used.
   * This filewriter uses a filewriter-per-instrument, so we cannot use an approach of generating a parallel write-request with different start/stop times.
-- To support this, we would need to:
+- To support this, we would need to either:
+  * Refactor the filewriter to operate in a pooled configuration, and emit new run starts / run stops to trigger writing intermediate files. This is architecturally preferred (but has a dependency on a refactor to use a pooled configuration).
   * Introduce a change to pause file-writing activity, copy a file, 'end' one copy, and then continue writing to the other file. The file is already flushed and self-consistent between messages.
   
 
