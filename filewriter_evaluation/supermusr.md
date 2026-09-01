@@ -120,7 +120,7 @@ A major initial decision would be whether to stick with the existing hard-coding
 - Reasonable inline documentation is present.
 - The codebase looks organised in a reasonable way, but is part of a monorepo which would make adopting it as a standalone component more difficult. An initial task would be to extract the filewriter component from the monorepo; the coupling to the monorepo is not excessively tight.
 - In places, there is tight coupling to how the SuperMuSR data pipeline operates, which may need refactoring to also be suitable for how the neutron data pipeline operates. Cross-process assumptions are likely to be the most risky area during refactoring, as neither team have expertise in the other team's data pipeline model (even though they are *architecturally* similar at a very high level).
-- Collaboration with SuperMuSR is probably technically desirable, but SuperMuSR is coming online relatively soon which will likely mean the SuperMuSR team are very busy with commissioning work. Attempting to make major changes to the SuperMuSR filewriter while SuperMuSR is simultaneously commissioning might not be viable.
+- Collaboration with the SuperMuSR team is desirable, but the extent of the changes required to the SuperMuSR filewriter mean that this collaboration is likely best achieved in either the greenfield or ESS options, aiming for a design that can cater for both the Neutron and SuperMuSR cases. The SuperMuSR team have indicated a willingness to collaborate on a new filewriter, separate from the existing SuperMuSR codebase.
 
 ### Supportability
 
