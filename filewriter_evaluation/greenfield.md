@@ -44,6 +44,7 @@ We will need to:
     - Both events and histograms, describing the same data, in the same file
     - Separate event and histogram files describing the same data
     - Detectors in event mode but monitors histogrammed
+  * The TCBs would be included in the run start message, emitted by `kafka_dae_control` and ultimately user-controlled through an IBEX interface with comparable functionality to the existing DAE interface.
 - [Static metadata](https://github.com/isisComputingGroup/datastreaming/issues/87)
   * Statically inserted into `nexus_structure`; this is trivial work per-dataset, once the core infrastructure work is complete.
 - [Dynamic metadata](https://github.com/isisComputingGroup/datastreaming/issues/88)
