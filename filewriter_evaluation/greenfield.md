@@ -13,7 +13,7 @@ Unlike the SuperMuSR and ESS options, every requirement below is unimplemented. 
 The overall target architecture is *similar* to the architecture of the ESS filewriter, but explicitly allowing *multiple* writer modules to each subscribe to the same input Kafka messages; i.e. rather than having an `ev44_writer`, we would have an `event_data` writer, which happens to subscribe to `ev44` and/or other message types as required.
 
 Architecturally:
-- Configurable nexus_template, defined in runStart message, comparable to ESS filewriter.
+- Configurable nexus_template, defined in runStart message, [comparable to ESS filewriter](https://github.com/ess-dmsc/kafka-to-nexus/blob/main/documentation/commands.md#data-streams-alt-writer-modules).
 - Writer modules for one Nexus dataset or group of related datasets (e.g. `NXevent_data` writer, `NXlog` writer, `isis_vms_compat` writer). Each writer module has complete, exclusive, ownership of one dataset - multiple writer modules will not update the same dataset.
 - Each writer module can register to be notified of a specified set of message schemas, on one or more topics.
 - When a Kafka message arrives, it is deserialised once centrally, and then every writer module that has registered for that schema + topic combination is passed a reference to that (typed) message
