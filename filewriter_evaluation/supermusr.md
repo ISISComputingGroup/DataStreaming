@@ -16,7 +16,7 @@ For this comparison, POLREF run POLREF00046184.nxs was written using both the IC
 
 Generally: the SuperMuSR filewriter **hard-codes the structure of a Muon Nexus file**. The Muon Nexus format implemented by the current SuperMuSR filewriter differs substantially from existing ICP-written files, and from Neutron files. Adopting the SuperMuSR filewriter would therefore be an almost total re-write of everything under `nexus_structure`, while retaining much of the 'plumbing'.
 
-A major initial decision would be whether to stick with the existing hard-coding of file structure, or to move to a dynamic `nexus_structure`, which is a **major** refactor but gives several requirements an immediate viable implementation path.
+A major initial decision would be whether to stick with the existing hard-coding of file structure, or to move to a dynamic `nexus_structure`, which is a **major** refactor but gives several requirements an immediate viable implementation path. The SuperMuSR team have indicated that moving to a dynamic `nexus_structure` is a goal at some point in the future, but a low priority given the amount of work involved.
 
 - [Neutron event data](https://github.com/isisComputingGroup/datastreaming/issues/83)
   * Event data in general is **partially supported**
