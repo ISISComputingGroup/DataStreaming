@@ -19,7 +19,8 @@ Without these assumptions, many of the arguments below that depend on new writer
   * **Generally supported**
   * To fully support this, we would need to add support for ISIS-specific quirks of our Nexus files. This is expected to be a relatively modest, localised task - not a rewrite.
 - [Neutron histogram data](https://github.com/isisComputingGroup/datastreaming/issues/84)
-  * **Unsupported**
+  * **Unsupported** in the filewriter itself
+    * Streamed `da00` schemas are supported and can be written to file.
   * To support this, we would need to:
     * Add a new writer module for a histogrammed representation of events.
     * Ensure that events can be written to both a histogrammed representation and an event representation if both modules are present in the `nexus_structure`.
