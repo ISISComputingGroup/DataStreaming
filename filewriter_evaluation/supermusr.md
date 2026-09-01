@@ -24,7 +24,7 @@ A major initial decision would be whether to stick with the existing hard-coding
     * The key datasets are written, but with a number of differences and omissions relative to ICP files. As an example, the `total_counts` dataset is absent.
     * There is support for writing a per-frame `veto_flags` dataset in `NXevent_data`, but there does not appear to be a corresponding dataset for the vetoes a user had enabled at data acquisition time.
   * To support this, we would need to:
-    * Implement a neutron-specific `ev44` event-data writer, reusing much of the code in the existing `aev2` support, or alternatively, refactor the existing event_data support to cater for both `ev44` and `aev2`
+    * Implement a neutron-specific `ev44` event-data writer, reusing much of the code in the existing `aev2` support, or alternatively, refactor the existing event_data support to cater for both `ev44` and `aev2`. SuperMuSR do use the additional fields in the `aev2` schema for additional per-event diagnostics.
     * Add support for the small number of missing datasets (for example total_counts).
 - [Neutron histogram data](https://github.com/isisComputingGroup/datastreaming/issues/84)
   * **Unsupported** in the filewriter itself
