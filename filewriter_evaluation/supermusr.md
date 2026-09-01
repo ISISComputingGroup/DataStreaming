@@ -114,6 +114,8 @@ A major initial decision would be whether to stick with the existing hard-coding
 - [A SuperMuSR ADR](https://isisneutronmuon.github.io/digital-muon-pipeline-docs/adrs/0004-core-technologies-for-in-flight-data-processing-software.html#context) states that their "components should not be tied to a specific means of deployment, orchestration or execution or execution environment". In practice, a Linux OS is assumed, but a specific deployment technology is not.
 - The SuperMuSR filewriter operates in a filewriter-per-instrument configuration.
 
+The SuperMuSR team have indicated that they have no strong preference for one file-writer architecture over another, and would be happy moving to a pooled configuration in time.
+
 ### Code quality
 
 - The major dependencies are listed [here](https://isisneutronmuon.github.io/digital-muon-pipeline-docs/adrs/0004-core-technologies-for-in-flight-data-processing-software.html#decision): Rust, Nix, OCI container images.
