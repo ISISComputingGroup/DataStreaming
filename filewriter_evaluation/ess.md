@@ -4,6 +4,8 @@
 
 The [ESS filewriter](https://github.com/ess-dmsc/kafka-to-nexus) is the ESS' filewriter process.
 
+Note: ESS are currently planning a rewrite of this filewriter in Rust. That rewrite is currently at an early stage of development.
+
 ### Fit with requirements
 
 #### NeXus file format
