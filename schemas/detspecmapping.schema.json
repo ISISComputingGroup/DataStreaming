@@ -16,7 +16,7 @@
         "description": "Spectrum number"
       }
     },
-    "required": ["detector", "spectrum"],
+    "required": ["det", "spec"],
     "additionalProperties": false
   }
 }
