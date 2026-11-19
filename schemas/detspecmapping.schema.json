@@ -5,12 +5,12 @@
   "items": {
     "type": "object",
     "properties": {
-      "detector": {
+      "det": {
         "type": "integer",
         "minimum": 0,
         "description": "Detector ID"
       },
-      "spectrum": {
+      "spec": {
         "type": "integer",
         "minimum": 0,
         "description": "Spectrum number"
