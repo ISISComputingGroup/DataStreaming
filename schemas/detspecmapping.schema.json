@@ -1,13 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "title": "Detector-spectra mapping",
-  "propertyNames": {
-    "pattern": "^[0-9]*$"
-  },
-  "additionalProperties": {
-    "type": "integer",
-    "minimum": 0
+  "title": "Detector to spectrum mapping",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "det": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Detector ID"
+      },
+      "spec": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Spectrum number"
+      }
+    },
+    "required": ["det", "spec"],
+    "additionalProperties": false
   }
 }
-
